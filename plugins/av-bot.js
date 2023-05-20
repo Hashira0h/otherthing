@@ -9,7 +9,7 @@ m.reply( `مرحبا ${taguser} تريد المساعده؟  اكتب /اوام�
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
-handler.customPrefix = /^(بوت|صوفيا)$/i
+handler.customPrefix = /^(بوت|يابوت)$/i
 handler.command = new RegExp
 
 export default handler
