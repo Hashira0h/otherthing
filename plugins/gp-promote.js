@@ -7,7 +7,7 @@ var number = text.split`@`[1]
 var number = text
 }
 if(!text && !m.quoted) return conn.reply(m.chat, `استخدام هذا الملصق \n *${usedPrefix + command}* منشن  (او رد على رسالته)@`, m)
-if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `✳️ Number incorrect`, m)
+if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `*الرقم غير صحيح*`, m)
 try {
 if(text) {
 var user = number + '@s.whatsapp.net'
@@ -23,7 +23,7 @@ m.reply(`✅ User promoted`)
 }}
 handler.help = ['promote']
 handler.tags = ['group']
-handler.command = ['promote', 'رفع'] 
+handler.command = ['ترقية', 'ترقيه'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
