@@ -6,7 +6,7 @@ var number = text.split`@`[1]
 }else if(!isNaN(text)) {
 var number = text
 }
-if(!text && !m.quoted) return conn.reply(m.chat, `✳️ Using the command \n *${usedPrefix + command}* @tag`, m)
+if(!text && !m.quoted) return conn.reply(m.chat, `استخدام هذا الامر \n *${usedPrefix + command}* @منشن`, m)
 if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `✳️ Number incorrect`, m)
   
 try {
@@ -26,7 +26,7 @@ m.reply(`✅ User demoted`)
 }
 handler.help = ['demote (@tag)']
 handler.tags = ['group']
-handler.command = ['demote', 'degradar'] 
+handler.command = ['demote', 'اعفاء'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
