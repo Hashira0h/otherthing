@@ -6,7 +6,7 @@ var number = text.split`@`[1]
 }else if(!isNaN(text)) {
 var number = text
 }
-if(!text && !m.quoted) return conn.reply(m.chat, `✳️ Using the command \n *${usedPrefix + command}* @tag  (or reply to a message)`, m)
+if(!text && !m.quoted) return conn.reply(m.chat, `استخدام هذا الملصق \n *${usedPrefix + command}* منشن  (او رد على رسالته)@`, m)
 if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `✳️ Number incorrect`, m)
 try {
 if(text) {
@@ -23,7 +23,7 @@ m.reply(`✅ User promoted`)
 }}
 handler.help = ['promote']
 handler.tags = ['group']
-handler.command = ['promote', 'promover'] 
+handler.command = ['promote', 'رفع'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
