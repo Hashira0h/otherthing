@@ -18,18 +18,18 @@ let sn = createHash('md5').update(who).digest('hex')
 
 let str = `
 ┌───「 *PROFILE* 」
-▢ *🔖 Name:* 
+▢ *الاسم:* 
    • ${username} ${registered ? '\n   • ' + name + ' ': ''}
    • @${who.replace(/@.+/, '')}
-▢ *📱Number:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-▢ *🔗Link:* wa.me/${who.split`@`[0]}${registered ? '\n▢ *🎈Age*: ' + age + ' years' : ''}
-▢ *⚠️warn:* ${warn}/${maxwarn}
-▢ *💎 Diamonds :* ${diamond}
-▢ *🆙 Level* : ${level}
-▢ *⬆️ XP* : Total ${exp} (${user.exp - min} / ${xp})\n${math <= 0 ? `ready for *${usedPrefix}levelup*` : `_*${math}xp*_ Missing to level up`}
-▢ *🏆Role:* ${role}
-▢ *📇 Registered :* ${registered ? 'Yes': 'No'}
-▢ *⭐ Premium* : ${prem ? 'Yes' : 'No'}
+▢ *الرقم:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+▢ *الرابط:* wa.me/${who.split`@`[0]}${registered ? '\n▢ *🎈Age*: ' + age + ' years' : ''}
+▢ *التحذيرات:* ${warn}/${maxwarn}
+▢ *الجواهر :* ${diamond}
+▢ *المستوى* : ${level}
+▢ *الxp* : Total ${exp} (${user.exp - min} / ${xp})\n${math <= 0 ? `ready for *${usedPrefix}levelup*` : `_*${math}xp*_ Missing to level up`}
+▢ *التصنيف:* ${role}
+▢ *التسجيل:* ${registered ? 'Yes': 'No'}
+▢ *بريميام* : ${prem ? 'Yes' : 'No'}
 └──────────────`
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
     m.react(done)
@@ -37,6 +37,6 @@ let str = `
 }
 handler.help = ['perfil']
 handler.tags = ['group']
-handler.command = ['profile', 'perfil'] 
+handler.command = ['profile', 'بروفايل'] 
 
 export default handler
