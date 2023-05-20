@@ -19,14 +19,14 @@ let img = await q.download?.()
 stiker = await mp4ToWebp(img, { pack: packname || global.packname, author: author || global.author })
 } else if (args[0] && isUrl(args[0])) {
 stiker = await createSticker(false, args[0], '', author, 20)
-} else throw `*RESPOND TO A IMAGE OR VIDEO OR GIF ${usedPrefix + command}*`
+} else throw `*رد على صوره او فيديو او GIF ${usedPrefix + command}*`
 } catch {
-stiker = '*huh*'	
+stiker = '*؟؟؟*'	
 } finally {
 m.reply(stiker)}}
 handler.help = ['sfull']
 handler.tags = ['sticker']
-handler.command = /^s(tic?ker)?(gif)?(wm)?$/i
+handler.command = /^s(tic?ker)?(س)?(wm)?$/i
 export default handler
 const isUrl = (text) => text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
 async function createSticker(img, url, packName, authorName, quality) {
