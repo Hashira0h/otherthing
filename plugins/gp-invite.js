@@ -6,13 +6,13 @@ if (isNaN(text)) throw ' 📌 Enter only numbers plus your country code with no 
 let group = m.chat
 let link = 'https://chat.whatsapp.com/' + await conn.groupInviteCode(group)
  
-      await conn.reply(text+'@s.whatsapp.net', `≡ *INVITATION TO GROUP*\n\nA user invited you to join this group \n\n${link}`, m, {mentions: [m.sender]})
-        m.reply(`✅ An invite link was sent to the user`) 
+      await conn.reply(text+'@s.whatsapp.net', `≡ *دعوة لدخول الجروب*\n\nدعاك مستخدم للانضمام إلى هذه المجموعة \n\n${link}`, m, {mentions: [m.sender]})
+        m.reply(`تم إرسال رابط الدعوة إلى المستخدم`) 
 
 }
 handler.help = ['invite <917xxx>']
 handler.tags = ['group']
-handler.command = ['invite','invitar'] 
+handler.command = ['دعوة','دعوه'] 
 handler.group = true
 handler.admin = false
 handler.botAdmin = true
