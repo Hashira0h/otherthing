@@ -5,13 +5,13 @@ let handler = async (m, { conn, usedPrefix, command, args: [event], text }) => {
   if (!chat.welcome) throw `✳️ To use this command you must activate the Welcomes with *${usedPrefix}on* welcome`
   let te = `
   ┌─⊷ *EVENTS*
-  ▢ welcome
-  ▢ bye
-  ▢ promote
-  ▢ demote
+  ❒ welcome
+  ❒ bye
+  ❒ promote
+  ❒ demote
   └───────────
   
-  📌 Example :
+  مثال :
   
   *${usedPrefix + command}* welcome @user`
 
@@ -58,7 +58,7 @@ action: act
 }
 handler.help = ['simulate <event> @user']
 handler.tags = ['group']
-handler.command = ['simular', 'simulate'] 
+handler.command = ['محاكاة', 'simulate'] 
 handler.admin = true
 handler.group = true
 
