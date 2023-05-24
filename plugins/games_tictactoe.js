@@ -29,10 +29,10 @@ export async function before(m) {
             }))
         if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
             m.reply({
-                '-3': 'The game is over',
-                '-2': 'Inválid',
-                '-1': 'Position inválid',
-                0: 'Position inválid',
+                '-3': 'انتهت اللعبة',
+                '-2': 'خطأ',
+                '-1': 'المكان مأخوذ',
+                0: 'المكان خطأ',
             }[ok])
             return !0
         }
@@ -61,21 +61,21 @@ export async function before(m) {
         }
         let winner = isSurrender ? room.game.currentTurn : room.game.winner
         let str = `
-${isWin ? `@${winner.split('@')[0]} You are the winner 🎉 *+${winScore} XP*` : isTie ? `Game over, with a draw *+${playScore} XP*` : `Now is your turn ${['❎', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`} 
+${isWin ? `@${winner.split('@')[0]} انت الفائز 🎉 *+${winScore} اكس بي*` : isTie ? `انتهت اللعبة, بالتعادل *+${playScore} اكس بي*` : `لقد حان دورك ${['❎', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`} 
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-▢ *PLAYER 1* ❎ : @${room.game.playerX.split('@')[0]} 
-▢ *PLAYER 2* ⭕ : @${room.game.playerO.split('@')[0]}
+❒ *الاعب 1* ❎ : @${room.game.playerX.split('@')[0]} 
+❒ *الاعب 2* ⭕ : @${room.game.playerO.split('@')[0]}
 
-Type *surrender* to give up 
+اكتب *انسحاب* للانسحاب 
 `.trim()
         let users = global.global.db.data.users
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        const btn = isTie ? ['TicTacToe', '/ttt'] : ['Surrender', 'surrender']
+        const btn = isTie ? ['TicTacToe', '/ttt'] : ['Surrender', 'انسحاب']
         if (room.x !== room.o)
             await this.reply(room.x, str, m, {
                 mentions: this.parseMention(str)
