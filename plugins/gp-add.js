@@ -40,16 +40,16 @@ let handler = async (m, { conn, text, participants }) => {
         const content = getBinaryNodeChild(user, 'add_request')
         const invite_code = content.attrs.code
         const invite_code_exp = content.attrs.expiration
-        let teks = `✳️ Al usuario @${jid.split('@')[0]} solo lo pueden agregar sus contactos :'v `
+        let teks = `المستخدم @${jid.split('@')[0]} يمكن أن تضاف فقط من قبل جهات الاتصال الخاصة بك`
         m.reply(teks, null, {
             mentions: conn.parseMention(teks)
         })
-        //await conn.sendGroupV4Invite(m.chat, jid, invite_code, invite_code_exp, await conn.getName(m.chat), 'Invitación para unirse a mi grupo de WhatsApp ', jpegThumbnail)
+        //await conn.sendGroupV4Invite(m.chat, jid, invite_code, invite_code_exp, await conn.getName(m.chat), 'دعوة للانضمام إلى مجموعة WhatsApp الخاصة بي', jpegThumbnail)
     }
 }
 handler.help = ['add']
 handler.tags = ['group']
-handler.command = ['add']
+handler.command = ['ضيف']
 handler.admin = true
 handler.group = true
 handler.rowner = true
