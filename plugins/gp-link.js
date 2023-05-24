@@ -5,14 +5,14 @@ let handler = async (m, { conn, args }) => {
     if (!/^[0-9]{5,16}-?[0-9]+@g\.us$/.test(group)) throw '⚠️ Can only be used in groups'
     let groupMetadata = await conn.groupMetadata(group)
     if (!groupMetadata) throw 'groupMetadata is undefined :\\'
-    if (!('participants' in groupMetadata)) throw 'participants is not defined :('
+    if (!('participants' in groupMetadata)) throw 'لم يتم تعريف المشاركين :('
     let me = groupMetadata.participants.find(user => areJidsSameUser(user.id, conn.user.id))
-    if (!me) throw '✳️ I am not in that group :('
-    if (!me.admin) throw '✳️ I am not an administrator'
+    if (!me) throw 'أنا لست في تلك المجموعة :('
+    if (!me.admin) throw 'أنا لست مشرفا'
     m.reply('https://chat.whatsapp.com/' + await conn.groupInviteCode(group))
 }
 handler.help = ['link']
 handler.tags = ['group']
-handler.command = ['link', 'linkgroup'] 
+handler.command = ['لينك', 'linkgroup'] 
 
 export default handler
