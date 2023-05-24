@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
   if (text) {
     global.db.data.chats[m.chat].sBye = text
     m.reply('✅ The farewell message was established')
-  } else throw `✳️ enter the message\n@user (mención)`
+  } else throw `ادخل الرساله\n@المستخدم (منشن)`
 }
 handler.help = ['setbye <text>']
 handler.tags = ['group']
