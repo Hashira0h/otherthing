@@ -17,7 +17,7 @@ let prem = global.prems.includes(who.split`@`[0])
 let sn = createHash('md5').update(who).digest('hex')
 
 let str = `
-┌───「 *PROFILE* 」
+───「 *البرفايل* 」───
 ❒ *الاسم:* 
    • ${username} ${registered ? '\n   • ' + name + ' ': ''}
    • @${who.replace(/@.+/, '')}
@@ -30,7 +30,7 @@ let str = `
 ❒ *التصنيف:* ${role}
 ❒ *التسجيل:* ${registered ? 'Yes': 'No'}
 ❒ *بريميام* : ${prem ? 'Yes' : 'No'}
-└──────────────`
+──────────────ه┘`
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
     m.react(done)
 
