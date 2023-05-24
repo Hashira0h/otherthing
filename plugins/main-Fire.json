@@ -29,5 +29,5 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 `.trim())
  handler.help = ['allmenu']
  handler.tags = ['main']
- handler.command = ['ا', 'اوامر']
+ handler.command = ['استمارة_فاير', 'فاير']
  export default handler
