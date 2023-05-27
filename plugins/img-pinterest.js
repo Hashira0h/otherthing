@@ -4,7 +4,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
   if (!text) throw `⌬ عن ماذا تريدني ان ابحث؟\n\n❒ مثال  : ${usedPrefix + command} غوجو`
   const json = await pinterest(text)
   conn.sendFile(m.chat, json.getRandom(), 'pinterest.jpg', `
-*▢  Pinterest:*  ${text}
+*❒  بينتيرست:*  ${text}
 `.trim(), m)
 }
 handler.help = ['pinterest']
