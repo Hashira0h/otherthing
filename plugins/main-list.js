@@ -5,7 +5,7 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 Ⓟ = Premium
 ⓓ = Diamonds
 -----  -----  -----  -----  -----
-  ≡ *ALL MENU LIST*
+  ❖ *جميع الاوامر* ❖
 
 ┌─⊷ *ABOUT*
 ▢ .blocklist
@@ -50,17 +50,15 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ▢ .unreg <Num Serie>
 └───────────
 
-┌─⊷ *STICKER*
-▢ .attp <text>
-▢ .emojimix <emoji+emoji> (ⓓ)
-▢ .getsticker (ⓓ)
-▢ .smaker (ⓓ)
-▢ .sticker
-▢ .toimg <sticker>
-▢ .tovid
-▢ .trigger <@user>
-▢ .ttp <text>
-▢ .take <name>|<author>
+───⊷ *الملصقات* ⊷────
+ه❒ .attp <text>
+❒ .مكس <ايموجي+ايموجي>
+❒ .ملصق
+❒ .لصوره
+❒ .لفيديو
+❒ .تريجر @المستخدم
+ه❒ .ttp <text>
+❒ .سرقة <الاسم الاول>|<الاسم الثاني>
 └───────────
 
 ┌─⊷ *IMAGE*
