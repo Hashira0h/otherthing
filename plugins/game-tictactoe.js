@@ -2,7 +2,7 @@ import TicTacToe from '../lib/tictactoe.js'
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
-    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw `❒ انت مازلت في الجيم, للاعاده اكتب : *${usedPrefix}delttt*`
+    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw `✳️ You are still in the game to restart the session write : *${usedPrefix}delttt*`
     if (!text) throw `✳️ Put a number in the room`
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
@@ -27,16 +27,16 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
             }[v]
         })
         let str = `
-انتظر ل @${room.game.currentTurn.split('@')[0]} كلاعب أول
+Waiting for @${room.game.currentTurn.split('@')[0]} as first player
         
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-❒ *ايدي الروم* ${room.id}
+▢ *Room ID* ${room.id}
 
-❒ *القوانين*
-‣ اصنع 3 صفوف من الرموز عموديا, أفقيا او انحرافي للفوز ‣ اكتب *delttt* للخروج من اللعبة
+▢ *Rules*
+‣ Make 3 rows of symbols vertically, horizontally or diagonally to win ‣ Type *surrender* to exit the game and be declared defeated
 `.trim()
         if (room.x !== room.o) await conn.reply(room.x, str, m, {
             mentions: conn.parseMention(str)
@@ -50,14 +50,14 @@ ${arr.slice(6).join('')}
             x: m.chat,
             o: '',
             game: new TicTacToe(m.sender, 'o'),
-            state: 'انتظر'
+            state: 'WAITING'
         }
         if (text) room.name = text
         
-     conn.reply(m.chat, `⏳ *توقع الشريك*\nاكتب الأمر التالي لقبوله
-❒ *${usedPrefix + command} ${text}*
+     conn.reply(m.chat, `⏳ *expecting partner*\nType the following command to accept
+▢ *${usedPrefix + command} ${text}*
 
-❒ الجائزه:  *4999 اكس بي*`, m, {
+🎁 Reward:  *4999 XP*`, m, {
             mentions: conn.parseMention(text)
         })
         
@@ -68,6 +68,6 @@ ${arr.slice(6).join('')}
 
 handler.help = ['tictactoe <tag number>']
 handler.tags = ['game']
-handler.command = ['اكس', 'ttc', 'ttt', 'xo']
+handler.command = ['tictactoe', 'ttc', 'ttt', 'xo']
 
 export default handler
