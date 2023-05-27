@@ -1,5 +1,5 @@
 let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems })  => m.reply(`
-≡ _Use the commands with the prefix . 
+اكتب قبل كل امر [.]
 
 ▢ ‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‌‎
 Ⓟ = Premium
@@ -87,30 +87,27 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ▢ .xnxx (ⓓ) (Ⓟ)
 └───────────
 
-┌─⊷ *GROUP*
-▢ .add
-▢ .delete
-▢ .delwarn @user
-▢ .demote (@tag)
-▢ .infogp
-▢ .hidetag
-▢ .invite <917xxx>
-▢ .kick @user
-▢ .link
-▢ .poll <Guru|piro|xd>
-▢ .perfil
-▢ .promote
-▢ .resetlink
-▢ .setbye <text>
-▢ .group *open/close*
-▢ .setwelcome <text>
-▢ .simulate <event> @user
-▢ .staff
-▢ .tagall
-▢ .totag
-▢ .warn @user
-▢ .warns
-▢ .checkexpired
+───⊷ *جروب* ⊷───
+❒ .ضيف
+❒ .حذف
+❒ .حذف_تحذير
+❒ .اعفاء (منشن)
+❒ .الجروب
+❒ .مخفي
+❒ .دعوه <الرقم>
+❒ .طرد (منشن)
+❒ .لينك
+❒ .بروفايل
+❒ .ترقية
+❒ .تغيير_اللينك
+ه❒ .setbye <text>
+ه❒ .setwelcome <text>
+❒ .محاكاة <الكلمه> @المستخدم
+❒ .المشرفين
+❒ .منشن
+❒ .لمنشن
+❒ .انئار @المستخدم
+❒ .الانذارات
 └───────────
 
 ┌─⊷ *EN/DISABLE OPTIONS*
