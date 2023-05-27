@@ -15,6 +15,6 @@ let stiker = await sticker(false, marah, global.packname, global.author)
 
 handler.help = ['trigger <@user>']
 handler.tags = ['sticker']
-handler.command = ['trigger', 'triggered', 'ger'] 
+handler.command = ['trigger', 'triggered', 'تريجر'] 
 
 export default handler
