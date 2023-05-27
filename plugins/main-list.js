@@ -62,9 +62,6 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 └───────────
 
 ┌─⊷ *IMAGE*
-▢ .tvid (ⓓ)
-▢ .imagen (ⓓ)
-▢ .girl (ⓓ)
 ▢ .meme (ⓓ)
 ▢ .pinterest
 ▢ .wallpaper (ⓓ)
