@@ -10,7 +10,7 @@ let sremovebg = global.API(`https://api.lolhuman.xyz/api/removebg?apikey=${lolke
 let stickerr = await sticker(false, sremovebg, global.packname, global.author)
 conn.sendFile(m.chat, stickerr, 'sticker.webp', '', m, { asSticker: true })
 } catch (e) {
-m.reply('*SORRY AN ERROR OCCURRED*')
+m.reply('*حدث خطأ ما*')
 }}
-handler.command = /^rmbg|removebg$/i
+handler.command = /^rmbg|حذف_الخلفية$/i
 export default handler
