@@ -2,12 +2,12 @@ import TicTacToe from '../lib/tictactoe.js'
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
     conn.game = conn.game ? conn.game : {}
-    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw `✳️ You are still in the game to restart the session write : *${usedPrefix}delttt*`
+    if (Object.values(conn.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw `❏ انت ماذلت في الجيم, لحذف الجيم اكتب : *${usedPrefix}حذففف*`
     if (!text) throw `✳️ Put a number in the room`
     let room = Object.values(conn.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
     // m.reply('[WIP Feature]')
     if (room) {
-        m.reply('✅ mate found')
+        m.reply('❏ تم اجاد الشخص الاخر')
         room.o = m.chat
         room.game.playerO = m.sender
         room.state = 'PLAYING'
@@ -27,7 +27,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
             }[v]
         })
         let str = `
-Waiting for @${room.game.currentTurn.split('@')[0]} as first player
+انتظر @${room.game.currentTurn.split('@')[0]} هو اللاعب الاول
         
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
@@ -35,8 +35,8 @@ ${arr.slice(6).join('')}
 
 ▢ *Room ID* ${room.id}
 
-▢ *Rules*
-‣ Make 3 rows of symbols vertically, horizontally or diagonally to win ‣ Type *surrender* to exit the game and be declared defeated
+❏ *القوانين*
+‣ اصنع 3 صفوف من الرموز عموديا, أفقيا او انحرافي للفوز ‣ اكتب *surrender* للانسحاب
 `.trim()
         if (room.x !== room.o) await conn.reply(room.x, str, m, {
             mentions: conn.parseMention(str)
@@ -54,10 +54,10 @@ ${arr.slice(6).join('')}
         }
         if (text) room.name = text
         
-     conn.reply(m.chat, `⏳ *expecting partner*\nType the following command to accept
-▢ *${usedPrefix + command} ${text}*
+     conn.reply(m.chat, `❏ *توقع الشريك*\nاكتب الامر التالي للدخول في نفس الجيم
+❏ *${usedPrefix + command} ${text}*
 
-🎁 Reward:  *4999 XP*`, m, {
+❏ الجائزه:* 4999 اكس بي*`, m, {
             mentions: conn.parseMention(text)
         })
         
@@ -68,6 +68,6 @@ ${arr.slice(6).join('')}
 
 handler.help = ['tictactoe <tag number>']
 handler.tags = ['game']
-handler.command = ['tictactoe', 'ttc', 'ttt', 'xo']
+handler.command = ['tictactoe', 'ttc', 'اكس', 'xo']
 
 export default handler
