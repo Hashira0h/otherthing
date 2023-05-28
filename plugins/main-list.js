@@ -61,10 +61,10 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ❒ .سرقة <الاسم الاول>|<الاسم الثاني>
 └───────────
 
-┌─⊷ *IMAGE*
-▢ .meme (ⓓ)
-▢ .pinterest
-▢ .wallpaper (ⓓ)
+───⊷ *الصور* ⊷───
+ه❒ .meme (ⓓ)
+❒ .بينتيرست
+❒ .خلفية
 └───────────
 
 ┌─⊷ *MAKER*
@@ -110,18 +110,11 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ▢ .disable <option>
 └───────────
 
-┌─⊷ *ANIME*
-▢ .waifu (ⓓ)
-▢ .neko (ⓓ)
-▢ .megumin (ⓓ)
-▢ .loli (ⓓ)
-└───────────
-
-┌─⊷ *ANIME REACTIONS*
-▢ .kill @tag (ⓓ)
-▢ .kiss @tag (ⓓ)
-▢ .pat @tag (ⓓ)
-▢ .slap @tag (ⓓ)
+────⊷ *تعبيرات انمي* ⊷────
+❒ .قتل
+❒ .بوس
+❒ .تربيتي
+❒ .ضرب
 └───────────
 
 ┌─⊷ *DOWNLOADERS*
