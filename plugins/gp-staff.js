@@ -9,7 +9,7 @@ let text = `
 
 ─── *المشرفين* ───
 ♕  ${listAdmin}
-───────────ه┘
+───────────┘
 `.trim()
 conn.sendFile(m.chat, pp, 'staff.png', text, m, false, { mentions: [...groupAdmins.map(v => v.id), owner] })
 }
