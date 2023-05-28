@@ -14,16 +14,16 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/avatar_con
     if (before !== user.level) {
         m.reply(`
 *❏ لـفـل جـديـد*
-الاسم : 
+
 المنشن : ${taguser}
-الـقديم : *${before}* \nالـجـديـد : *${user.level}*
+
+الـقديم : *${before}* \n\nالـجـديـد : *${user.level}*
+
  تـصـنـيـفـك : *${user.role}*
  
- _لاقـافـهـا اكـتـب_
-_*/off autolevelup*_
-	` conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
-    m.react(done)
-.trim())
+ *لاقـافـهـا اكـتـب*
+*.off autolevelup*
+	`.trim())
     }
 }
 
