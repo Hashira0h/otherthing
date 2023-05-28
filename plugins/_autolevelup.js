@@ -8,11 +8,12 @@ export async function before(m, { conn }) {
     let before = user.level * 1
     while (canLevelUp(user.level, user.exp, global.multiplier))
         user.level++
+let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
     user.role = global.rpg.role(user.level).name
     if (before !== user.level) {
         m.reply(`
-*▢ لـفـل جـديـد*
-
+*❏ لـفـل جـديـد*
+الاسم : ${taguser}
 الـقديم : *${before}* \nالـجـديـد : *${user.level}*
  تـصـنـيـفـك : *${user.role}*
  
