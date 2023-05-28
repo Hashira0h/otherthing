@@ -9,6 +9,6 @@ m.reply(`${indo}\n\n${character}\n${anime}`)
 }
 handler.help = ['animequote']
 handler.tags = ['internet']
-handler.command = /^(katanime|kataanime)$/i
+handler.command = /^(katanime|مقولة)$/i
 
 export default handler
