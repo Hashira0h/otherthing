@@ -78,8 +78,6 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ┌─⊷ *PREMIUM*
 ▢ .gdrive (ⓓ) (Ⓟ)
 ▢ .mediafire <url> (ⓓ)
-▢ .xvid (ⓓ) (Ⓟ)
-▢ .xnxx (ⓓ) (Ⓟ)
 └───────────
 
 ───⊷ *جروب* ⊷───
@@ -158,19 +156,6 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ┌─⊷ *DATABASE*
 ▢ .listcmd
 ▢ .setcmd <txt>
-└───────────
-
-┌─⊷ *NSFW +18*
-▢ .xwaifu (ⓓ)
-▢ .xneko (ⓓ)
-▢ .blowjob (ⓓ)
-▢ .ass (ⓓ)
-▢ .boobs (ⓓ)
-▢ .lesbian (ⓓ)
-▢ .pussy (ⓓ)
-▢ .pack (ⓓ)
-▢ .chut (ⓓ)
-▢ .gand (ⓓ)
 └───────────
 
 ┌─⊷ *OWNER*
