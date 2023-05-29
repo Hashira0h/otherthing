@@ -46,31 +46,31 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/avatar_con
 let user = global.db.data.users[who]
   
 let infobt = `
-≡ *INFO BOT*
+◯ *معلومات البوت*
   
-*STATE*
-▢ *${groupsIn.length}* GROUP CHATS
-▢ *${groupsIn.length}* united groups
-▢ *${groupsIn.length - groupsIn.length}* abandoned groups
-▢ *${chats.length - groupsIn.length}* private chats
-▢ *${chats.length}* Total Chats
+*الولايات*
+◯ *${groupsIn.length}* جروب
+◯ *${groupsIn.length}* المجموعات المتحدة
+◯ *${groupsIn.length - groupsIn.length}* المجموعات المهجورة
+◯ *${chats.length - groupsIn.length}* الدردشات الخاصة
+◯ *${chats.length}* إجمالي الدردشات
 
-*≡ OWNER*
-  *GURU*
-▢ Instagram :
-  • https://instagram.com/asli_guru69
-▢ GitHub :
-  • https://github.com/Guru322
-▢ Telegram : 
-  • t.me/i_want_to_be_isekaied (GURU) 
-▢ YouTube : 
-  • https://youtube.com/@Asliguru
+*◯ المالك*
+  *MO_YT*  *ITOSHI RIN*
+❆ الانستغرام :
+  • لم يضاف بعد
+❆ جيت هب :
+  • لم يضاف بعد
+❆ تيليجرام : 
+  •   لم يضاف بعد
+❆ يوتيوب : 
+  • لم يضاف بعد
 
- *≡ S E R V E R*
-*🛑 RAM:* ${format(totalmem() - freemem())} / ${format(totalmem())}
-*🔵 FreeRAM:* ${format(freemem())}
+ *◯ المساحه*
+*🛑 المستخدمه:* ${format(totalmem() - freemem())} / ${format(totalmem())}
+*🔵 الفارغه:* ${format(freemem())}
 
-*≡  NodeJS memory *
+*◯  NodeJS memory*
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 `
 conn.sendFile(m.chat, pp, 'prefil.jpg', infobt, m, false, { mentions: [who] })
@@ -79,6 +79,6 @@ m.react(done)
 }
 handler.help = ['info']
 handler.tags = ['main']
-handler.command = ['info', 'infobot', 'botinfo']
+handler.command = ['البوت', 'infobot', 'botinfo']
 
 export default handler
