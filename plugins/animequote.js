@@ -1,22 +1,6 @@
 import fetch from 'node-fetch'
 let handler = async(m, { conn, text }) => {
-  let userChar = [
-      "غوجو",
-      "Generous",
-      "Grumpy",
-      "Overconfident",
-      "Obedient",
-      "Good",
-      "Simp",
-      "Kind",
-      "Patient",
-      "Pervert",
-      "Cool",
-      "Helpful",
-    ];
-const userCharacterSeletion =
-      userChar[Math.floor(Math.random() * userChar.length)];
-  let res = await (await fetch('*${userCharacterSeletion}*'))
+  let res = await (await fetch('https://katanime.vercel.app/api/getrandom?limit=1'))
   if (!res.ok) throw await res.text()
   let json = await res.json()
   if(!json.result[0]) throw json
