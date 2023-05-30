@@ -32,7 +32,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             m.reply(`✦ *فزت* 🎊\n\n▧ انت : ${text}\n▧ صوفيا : ${astro}\n\n🎁 النقاط *+${poin} اكس بي*`)
         } else {
           global.db.data.users[m.sender].exp -= 300
-            m.reply(`✦ *lost*\n\n▧ انت : ${text}\n▧ صوفيا : ${astro}\n\nالنقاط *-${poin} اكس بي*`)
+            m.reply(`✦ *خسرت*\n\n▧ انت : ${text}\n▧ صوفيا : ${astro}\n\nالنقاط *-${poin} اكس بي*`)
         }
     } else if (text == 'ورقه') {
         if (astro == 'حجر') {
