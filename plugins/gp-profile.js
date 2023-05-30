@@ -17,20 +17,30 @@ let prem = global.prems.includes(who.split`@`[0])
 let sn = createHash('md5').update(who).digest('hex')
 
 let str = `
-───「 *البرفايل* 」───
-❒ *الاسم:* 
-   • ${username} ${registered ? '\n   • ' + name + ' ': ''}
-   • @${who.replace(/@.+/, '')}
-❒ *الرقم:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-❒ *الرابط:* wa.me/${who.split`@`[0]}${registered ? '\n▢ *🎈Age*: ' + age + ' years' : ''}
-❒ *التحذيرات:* ${warn}/${maxwarn}
-❒ *الجواهر :* ${diamond}
-❒ *المستوى* : ${level}
-❒ *الاكس بي* : Total ${exp} (${user.exp - min} / ${xp})\n${math <= 0 ? `ready for *${usedPrefix}levelup*` : `_*${math}xp*_ Missing to level up`}
-❒ *التصنيف:* ${role}
-❒ *التسجيل:* ${registered ? 'Yes': 'No'}
-❒ *بريميام* : ${prem ? 'Yes' : 'No'}
-──────────────ه┘`
+╔════〖 البروفايل 〗════╗
+⇦ *الاسم:* ↶
+  ⋞ ${username} ${registered ? '\n   • ' + name + ' ': ''} ⋟
+⇦ *المنشن:* ↶
+   ⋞ @${who.replace(/@.+/, '')} ⋟
+⇦ *الرقم:* ↶
+ ⋞ ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')} ⋟
+⇦ *الرابط:* ↶
+⋞ wa.me/${who.split`@`[0]}${registered ? '\n▢ *🎈Age*: ' + age + ' years' : ''} ⋟
+⇦ *التحذيرات:* ↶
+⋞ ${warn}/${maxwarn} ⋟
+⇦ *الجواهر :* ↶
+⋞ ${diamond} ⋟
+⇦ *المستوى* : ↶
+⋞ ${level} ⋟
+⇦ *الاكس بي* : ↶
+⋞ Total ${exp} (${user.exp - min} / ${xp})\n${math <= 0 ? `*${usedPrefix}levelup*` : `فاضل لك *${math}اكس بي للصعود الى لفل اخر*`} ⋟
+⇦ *التصنيف:* ↶
+⋞ ${role} ⋟
+⇦ *التسجيل:* ↶
+⋞ ${registered ? 'يب': 'لا'} ⋟
+⇦ *بريميام* : ↶
+⋞ ${prem ? 'يب' : 'لا'} ⋟
+╚═══════════════════`
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
     m.react(done)
 
