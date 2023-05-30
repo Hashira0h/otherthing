@@ -13,7 +13,7 @@ global.owner = [
 ] //Number of owners
 
 global.mods = ['201159250900','201206178781'] 
-global.prems = ['01206178781', '201159250900', '967780763155']
+global.prems = ['201206178781', '201159250900', '967780763155']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -47,11 +47,11 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'ᴛʜᴇ sᴏғɪᴀ-ʙᴏᴛ'
+global.botname = 'ᴛʜᴇ MIKASA ʙᴏᴛ'
 global.premium = 'true'
-global.packname = 'sᴏғɪᴀ┃ᴮᴼᵀ' 
-global.author = 'ɪᴛᴏsʜɪ ʀɪɴ' 
-global.igfg = '▢ Follow on Instagram\nhttps://instagram.com/mohamedmostafa4769?igshid=ZGUzMzM3NWJiOQ==\n' 
+global.packname = '✿ 𝗠𝐈𝐊𝗔𝗦𝗔 ┃ᴮᴼᵀ' 
+global.author = 'ɪᴛᴏsʜɪ ʀɪɴ ♡' 
+global.igfg = '❀ Follow on Instagram\nhttps://instagram.com/mohamedmostafa4769?igshid=ZGUzMzM3NWJiOQ==\n' 
 global.dygp = 'https://chat.whatsapp.com/JcWLIylfbI5I0wazsJ7xEB'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT-V1' 
 global.fgyt = 'https://youtube.com/@Mo_yt74'
