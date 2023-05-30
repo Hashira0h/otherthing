@@ -33,7 +33,7 @@ let str = `
 ⇦ *المستوى* : ↶
 ⋞ ${level} ⋟
 ⇦ *الاكس بي* : ↶
-⋞ Total ${exp} (${user.exp - min} / ${xp})\n${math <= 0 ? `*${usedPrefix}levelup*` : `فاضل لك *${math}اكس بي للصعود الى لفل اخر*`} ⋟
+⋞ المجموع ${exp} (${user.exp - min} / ${xp})\n${math <= 0 ? `*${usedPrefix}levelup*` : `فاضل لك *${math}اكس بي للصعود الى لفل اخر*`} ⋟
 ⇦ *التصنيف:* ↶
 ⋞ ${role} ⋟
 ⇦ *التسجيل:* ↶
