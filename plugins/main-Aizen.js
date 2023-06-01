@@ -11,7 +11,7 @@ conn.sendFile(m.chat, bv, 'picturejpg', null, m, true, { type: 'pictureMessage',
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 }
 
-handler.customPrefix = /^(عمك|صوفيا مين عمك)$/i
+handler.customPrefix = /^( ون بيس عمك|عمك|ميكاسا مين عمك)$/i
 handler.command = new RegExp
 
 export default handler
