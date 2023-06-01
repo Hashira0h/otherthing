@@ -3,7 +3,7 @@ let handler = async (m, { conn}) => {
 let user = global.db.data.users[m.sender]
 let name = conn.getName(m.sender)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-let av = `./src/mp3/${pickRandom(["levi", "aizen"])}.mp3`
+let av = `./src/mp3/${pickRandom(["levi", "aizen", "Gojo"])}.mp3`
 
 m.reply( `مرحبا ${taguser}\nاكتب قبل كل امر [.]
 
