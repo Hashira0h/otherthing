@@ -12,7 +12,7 @@ const Minimum_Temperature = res.data.main.temp_min + "°C"
 const Maximum_Temperature = res.data.main.temp_max + "°C"
 const Humidity = res.data.main.humidity + "%"
 const Wind = res.data.wind.speed + "km/h"
-const wea = `「 📍 」المكان: ${name}\n「 🗺️ 」الدوله: ${Country}\n「 🌤️ 」VIEW: ${Weather}\n「 🌡️ 」درجة الحراره: ${Temperature}\n「 💠 」 درجة الحراره الصغرى: ${Minimum_Temperature}\n「 📛 」 درجة الحراره الكبرى: ${Maximum_Temperature}\n「 💦 」HUMIDITY: ${Humidity}\n「 🌬️ 」 WINDSPEED: ${Wind}`
+const wea = `「 📍 」المكان: ${name}\n「 🗺️ 」الدوله: ${Country}\n「 🌤️ 」الشكل: ${Weather}\n「 🌡️ 」درجة الحراره: ${Temperature}\n「 💠 」 درجة الحراره الصغرى: ${Minimum_Temperature}\n「 📛 」 درجة الحراره الكبرى: ${Maximum_Temperature}\n「 💦 」رطوبة: ${Humidity}\n「 🌬️ 」 سرعة الرياح: ${Wind}`
 m.reply(wea)
 } catch {
 return "*ERROR*"}}
