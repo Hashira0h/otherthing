@@ -1,6 +1,7 @@
 let handler = async (m, { conn}) => {
 let user = global.db.data.users[m.sender]
-let name = conn.getName(m.sender)
+let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let username = conn.getName(who)
 let av = `./src/mp3/${pickRandom(["aizen"])}.mp3`
 
