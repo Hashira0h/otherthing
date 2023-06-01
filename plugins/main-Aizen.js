@@ -3,11 +3,8 @@ let user = global.db.data.users[m.sender]
 let name = conn.getName(m.sender)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let av = `./src/mp3/${pickRandom(["aizen"])}.mp3`
-let contact = '@.201206178781'
-client.on('message', async (msg) => {
-    const mentions = await msg.getMentions();
 
-m.reply( `ايزن هو عمي ${contact.pushname}`)
+m.reply( `يا ${taguser} ايزن هو عمي 🫡🤍`)
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
