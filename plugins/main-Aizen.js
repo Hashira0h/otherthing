@@ -6,7 +6,7 @@ let username = conn.getName(who)
 let av = `./src/mp3/${pickRandom(["Aizen"])}.jpg`
 
 m.reply( `يا ${username} ايزن هو عمي 🫡🤍`)
-conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+conn.sendFile(m.chat, av, 'picturejpg', null, m, true, { type: 'pictureMessage', ptt: true })
 } 
 
 handler.customPrefix = /^(عمك|صوفيا مين عمك)$/i
