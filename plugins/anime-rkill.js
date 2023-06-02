@@ -16,7 +16,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
    let name2 = conn.getName(m.sender) 
    m.react(rwait)
 
-  let rki = await fetch(`https://api.waifu.pics/sfw/kill`)
+  let rki = await fetch(`https://file.io/6HiehMHMSbYL`)
     if (!rki.ok) throw await rki.text()
    let jkis = await rki.json()
    let { url } = jkis
