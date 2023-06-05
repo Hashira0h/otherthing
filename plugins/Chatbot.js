@@ -125,7 +125,7 @@ if (/^تصبح على خير/i.test(m.text) ) { //sem prefixo
 
 } 
 
-if (/^احبيك$/i.test(m.text) ) { //sem prefixo
+if (/^احبك$/i.test(m.text) ) { //sem prefixo
     conn.reply(m.chat, ` اكثر `, m) //wm, null, [['Menu', '#menu']], m) botones :V
 
 }
@@ -137,6 +137,11 @@ if (/^كل زق$/i.test(m.text) ) { //sem prefixo
 
 if (/^كيفك|كيفيك$/i.test(m.text) ) { //sem prefixo
     conn.reply(m.chat, ` الحمد لله و انت`, m) //wm, null, [['Menu', '#menu']], m) botones :V
+
+}
+
+if (/^تست$/i.test(m.text) ) { //sem prefixo
+    conn.reply(m.chat, `كملووو`, m) //wm, null, [['Menu', '#menu']], m) botones :V
 
 }
 return !0 }
