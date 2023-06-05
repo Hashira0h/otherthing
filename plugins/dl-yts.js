@@ -21,7 +21,7 @@ let handler = async (m, {conn, text }) => {
 ◎ ${v.videoCount} فيديوهات
 `.trim()
     }
-  }).filter(v => v).join('\n\n✦―――――――〈 Mikasa 〉―――――――✦\n\n')
+  }).filter(v => v).join('\n\n✦――――〈 Mikasa 〉――――✦\n\n')
   conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m)
 }
 handler.help = ['ytsearch'] 
