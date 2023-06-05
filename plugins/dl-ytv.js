@@ -15,14 +15,14 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 		const title = await yt.title
 		const size = await yt.video[q].fileSizeH 
 		
-       if (size.split('MB')[0] >= limit) return m.reply(` ≡  *GURU YTDL*\n\n▢ *⚖️Size* : ${size}\n▢ *🎞️quality* : ${q}\n\n▢ _The file exceeds the download limit_ *+${limit} MB*`)    
+       if (size.split('MB')[0] >= limit) return m.reply(` 〖 تحميل من يوتيوب 〗◎ *⚖️المساحه* : ${size}\n◎ *🎞️الجوده* : ${q}\n\n◎ _لا يمكنني تحميله_ *+${limit} MB*`)    
 	  conn.sendFile(m.chat, dl_url, title + '.mp4', `
- ≡  *GURU YTDL*
+ ☃  *Mikasa YTDL*
   
-▢ *📌Títle* : ${title}
-▢ *📟 Ext* : mp4
-▢ *🎞️Quality* : ${q}
-▢ *⚖️Size* : ${size}
+◎ *📌العنوان* : ${title}
+◎ *📟 صنفه* : mp4
+◎ *🎞️الجوده* : ${q}
+◎ *⚖️المساحه* : ${size}
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done) 
 		
@@ -43,7 +43,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 }
 handler.help = ['ytmp4 <link yt>']
 handler.tags = ['dl'] 
-handler.command = ['ytmp4', 'video']
+handler.command = ['ytmp4', 'فيديو']
 handler.diamond = true
 
 export default handler
