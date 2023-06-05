@@ -8,24 +8,24 @@ let handler = async (m, {conn, text }) => {
   let teks = results.all.map(v => {
     switch (v.type) {
       case 'video': return `
-▢ ${v.title}
-▢ *Link* : ${v.url}
-▢ *Duration* : ${v.timestamp}
-▢ *publiced :* ${v.ago}
-▢ *Views:* ${v.views}
+◎ *العنوان :* ${v.title}
+◎ *الرابط* : ${v.url}
+◎ *المده* : ${v.timestamp}
+◎ *اعلن :* ${v.ago}
+◎ *المشاهدات:* ${v.views}
 
    `.trim()
       case 'canal': return `
-▢ *${v.name}* (${v.url})
-▢${v.subCountLabel} (${v.subCount}) Suscribe
-▢ ${v.videoCount} videos
+◎ *${v.name}* (${v.url})
+◎${v.subCountLabel} (${v.subCount}) مشتركين
+◎ ${v.videoCount} فيديوهات
 `.trim()
     }
-  }).filter(v => v).join('\n\n________________________\n\n')
+  }).filter(v => v).join('\n\n✦―――――――〈 Mikasa 〉―――――――✦\n\n')
   conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m)
 }
 handler.help = ['ytsearch'] 
 handler.tags = ['dl']
-handler.command = ['ytsearch', 'yts'] 
+handler.command = ['بحث', 'yts'] 
 
 export default handler
