@@ -6,5 +6,5 @@ let handler = async (m, { conn, usedprefix }) => {
     }
     handler.help = ['blur','difuminar2']
     handler.tags = ['maker']
-    handler.command = /^(blur|difuminar2)$/i
+    handler.command = /^(blur|تغبيش)$/i
     export default handler
