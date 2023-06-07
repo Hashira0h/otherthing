@@ -11,7 +11,7 @@ m.reply( `بسم الله الرحمن الرحيم
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
-handler.customPrefix = /^(الناس)$/i
+handler.customPrefix = /^(سورة الناس|سوره الناس)$/i
 handler.command = new RegExp
 
 export default handler
