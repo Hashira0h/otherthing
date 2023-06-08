@@ -7,7 +7,7 @@ const cooldown = 86400000
 let handler = async (m, {conn, isPrems }) => {
   let user = global.db.data.users[m.sender]
   let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `لقد جمعتهم بالفعال!/n انتظر *${msToTime(time - new Date())}*  ثم جمعهم مجددا`
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `You have already claimed this daily claim!, wait for *${msToTime(time - new Date())}* `
   let text = ''
   for (let reward of Object.keys(rewards)) {
     if (!(reward in user)) continue
@@ -15,15 +15,15 @@ let handler = async (m, {conn, isPrems }) => {
     text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
   }
   m.reply(`
-🎁 *الجائزه اليوميه*
+🎁 *daily reward*
 
-✌ *لقد حصلت على:*
+▢ *Has recieved:*
  ${text}`)
   global.db.data.users[m.sender].lastclaim = new Date * 1
 }
 handler.help = ['daily', 'claim']
 handler.tags = ['xp']
-handler.command = /^(daily|اليومي)$/i
+handler.command = /^(daily|claim)$/i
 
 handler.cooldown = cooldown
 
