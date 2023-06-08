@@ -1,11 +1,11 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) throw `*This command generates image from texts*\n\n*—◉ 𝙴xample usage*\n*◉ ${usedPrefix + command} Netaji subhas bose*\n*◉ ${usedPrefix + command} hatsune miku best*`
+if (!text) throw `*هذا الامر يمكنه احذار صور عن الشيء الذي تكتبه*\n\n*مثال للاستخدام*\n*◉ ${usedPrefix + command} قمر*\n*◉ ${usedPrefix + command} سماء*`
 try {
-m.reply('*Processing image *')
+m.reply('*جاري تحضير الصوره !*')
 let tiores = await conn.getFile(`https://api.lolhuman.xyz/api/dall-e?apikey=${lolkeysapi}&text=${text}`)
 await conn.sendFile(m.chat, tiores.data, null, null, m)
 } catch {
-throw `*INTERNAL ERROR*`
+throw `*حدث خطأ ما !*`
 }}
-handler.command = ['ai2', 'dalle', 'gen', 'gimg', 'openai2']
+handler.command = ['ai2', 'dalle', 'gen', 'صوره', 'صورة']
 export default handler
