@@ -6,8 +6,8 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
 	var limit
      if((isOwner || isPrems)) limit = 1200
      else limit = 100
-   if (!args[0]) throw `✳️ Enter the mediafire link next to the command`
-    if (!args[0].match(/mediafire/gi)) throw `❎ Link incorrect`
+   if (!args[0]) throw `*ادخل رابط من ميديافاير بجانب الامر !*`
+    if (!args[0].match(/mediafire/gi)) throw `❎ الرابط غير صحيح`
     m.react(rwait)
     let full = /f$/i.test(command)
     let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
@@ -16,13 +16,12 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner, isPrems }) =
     let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
     let isLimit = (isPrems || isOwner ? limit : limit) * 1012 < filesize
     let caption = `
-   ≡ *MEDIAFIRE*
-
-▢ *Number:* ${filename}
-▢ *Size:* ${filesizeH}
-▢ *Extension:* ${ext}
-▢ *Uploaded:* ${aploud}
-${isLimit ? `\n▢ The file exceeds the download limit *+${limit} MB*\nUpgrade to premium to be able to download files more than *900 MB*` : ''} 
+   ┓━━━ *ميديا فاير* 
+┫■ *الرقم:* ${filename}
+┫■ *الحجم:* ${filesizeH}
+┫■ *الامتداد:* ${ext}
+┫■ *وقت الرفع:* ${aploud}
+${isLimit ? `\n■ تجاوز الملف حد التنزيل *+${limit} MB*\nقم بالترقية إلى بريميام لتتمكن من تنزيل الملفات أكثر من *900 MB*` : ''} 
 `.trim()
     await conn.sendFile(m.chat, ss, 'ssweb.png', caption, m)
     
@@ -31,7 +30,7 @@ ${isLimit ? `\n▢ The file exceeds the download limit *+${limit} MB*\nUpgrade t
 }
 handler.help = ['mediafire <url>']
 handler.tags = ['dl', 'prem']
-handler.command = ['mediafire', 'mfire'] 
+handler.command = ['mediafire', 'ميديافاير'] 
 handler.diamond = true
 handler.premium = false
 
