@@ -115,23 +115,6 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ❒ .ضرب
 └───────────
 
-┌─⊷ *DOWNLOADERS*
-▢ .facebook <url> (ⓓ)
-▢ .gdrive (ⓓ) (Ⓟ)
-▢ .gitclone <url> (ⓓ)
-▢ .igstalk
-▢ .instagram <link ig> (ⓓ)
-▢ .mediafire <url> (ⓓ)
-▢ .play
-▢ .play2
-▢ .tiktok (ⓓ)
-▢ .tiktokstalk
-▢ .twitter <url> (ⓓ)
-▢ .ytmp3 <url> (ⓓ)
-▢ .ytsearch
-▢ .ytmp4 <link yt> (ⓓ)
-└───────────
-
 ┌─⊷ *TOOLS*
 ▢ .cal <equation>
 ▢ .google (ⓓ)
