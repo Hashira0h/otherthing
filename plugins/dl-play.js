@@ -6,33 +6,33 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
   await m.reply(wait)
   let search = await yts(text)
   let vid = search.videos[Math.floor(Math.random() * search.videos.length)]
-  if (!search) throw 'Video Not Found, Try Another Title'
+  if (!search) throw 'لم اجد الفيديو، جرب عنوان اخر !'
   let { title, thumbnail, timestamp, views, ago, url } = vid
   let wm = 'Downloading audio please wait'
 
-  let captvid = `╭──── 〔 Y O U T U B E 〕 ─⬣
-⬡ Title: ${title}
-⬡ Duration: ${timestamp}
-⬡ Views: ${views}
-⬡ Upload: ${ago}
-⬡ Link: ${url}
+  let captvid = `╮──── 〔 يوتيوب 〕 ─⬣
+⬡ العنوان: ${title}
+⬡ المدة: ${timestamp}
+⬡ المشاهدات: ${views}
+⬡ موعد النشر: ${ago}
+⬡ الرابط: ${url}
 ╰────────⬣`
-  conn.sendButton(m.chat, `╭──── 〔 Y O U T U B E 〕 ─⬣
-⬡ Title: ${title}
-⬡ Duration: ${timestamp}
-⬡ Views: ${views}
-⬡ Upload: ${ago}
-⬡ Link: ${url}
-╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['VIDEO', `${usedPrefix}ytmp4 ${url}`], false, { quoted: m, 'document': { 'url':'https://wa.me/917605902011' },
+  conn.sendButton(m.chat, `╮──── 〔 يوتيوب 〕 ─⬣
+⬡ العنوان: ${title}
+⬡ المدة: ${timestamp}
+⬡ المشاهدات: ${views}
+⬡ موعد النشر: ${ago}
+⬡ الرابط: ${url}
+╰────────⬣`, author.trim(), await( await conn.getFile(thumbnail)).data, ['VIDEO', `${usedPrefix}ytmp4 ${url}`], false, { quoted: m, 'document': { 'url':'https://wa.me/201206178781' },
 'mimetype': global.dpdf,
-'fileName': `𝔾𝕌ℝ𝕌 ℙ𝕃𝔸𝕐𝔼ℝ`,
+'fileName': `مشغل ميكاسا`,
 'fileLength': 666666666666666,
 'pageCount': 666,contextInfo: { externalAdReply: { showAdAttribution: true,
 mediaType:  2,
 mediaUrl: `${url}`,
-title: `AUDIO IS BEING SENT...`,
+title: `جاري الارسال`,
 body: wm,
-sourceUrl: 'http://wa.me/917605902011', thumbnail: await ( await conn.getFile(thumbnail)).data
+sourceUrl: 'http://wa.me/201206178781', thumbnail: await ( await conn.getFile(thumbnail)).data
   }
  } 
 })
@@ -64,7 +64,7 @@ thumbnail: await(await conn.getFile(thumbnail)).data
 }
 handler.help = ['play'].map(v => v + ' <query>')
 handler.tags = ['downloader']
-handler.command = /^play$/i
+handler.command = /^شغل$/i
 
 handler.exp = 0
 handler.diamond = false
