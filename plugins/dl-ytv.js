@@ -3,8 +3,8 @@ import fg from 'api-dylux'
 import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper'
 let limit = 350
 let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-	if (!args || !args[0]) throw `✳️ Example :\n${usedPrefix + command} https://youtu.be/YzkTFFwxtXI`
-    if (!args[0].match(/youtu/gi)) throw `❎ Verify that the YouTube link`
+	if (!args || !args[0]) throw `❖ مثال :\n${usedPrefix + command} https://youtu.be/pO5dgZrM9Mk`
+    if (!args[0].match(/youtu/gi)) throw `❎ تاكد من ان الرابط من يوتيوب`
 	 let chat = global.db.data.chats[m.chat]
 	 m.react(rwait) 
 	try {
@@ -29,13 +29,13 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	} catch {
 		
 		const { title, result, quality, size, duration, thumb, channel } = await fg.ytv(args[0]) 
-		if (size.split('MB')[0] >= limit) return m.reply(` ≡  *GURU YTDL2*\n\n▢ *⚖️Size* : ${size}\n▢ *🎞️Quality* : ${quality}\n\n▢ _The file exceeds the download limit_ *+${limit} MB*`)
+		if (size.split('MB')[0] >= limit) return m.reply(` 〖 تحميل من يوتيوب 〗\n\n❖ *⚖️المساحه* : ${size}\n❖ *🎞️الجوده* : ${quality}\n\n❖ _تجاوز الملف حد التنزيل_ *+${limit} MB*`)
 	conn.sendFile(m.chat, result, title + '.mp4', `
- ≡  *GURU YTDL2*
+〖 تحميل من يوتيوب 〗
   
-▢ *📌Títle* : ${title}
-▢ *📟 Ext* : mp4
-▢ *⚖️size* : ${size}
+❖ *📌 العنوان* : ${title}
+❖ *📟 نوع الملف* : mp4
+❖ *⚖️ المساحه* : ${size}
 `.trim(), m, false, { asDocument: chat.useDocument })
 		m.react(done) 
 	} 
