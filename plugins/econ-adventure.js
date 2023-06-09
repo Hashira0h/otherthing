@@ -3,15 +3,15 @@ let handler = async (m, { usedPrefix }) => {
     let user = global.db.data.users[m.sender]
     let timers = (cooldown - (new Date - user.lastadventure))
     if (user.health < 80) return m.reply(`
-Requires at least 80 ❤️Healths for the adventure!!
-please buy ❤️Healths first by typing *${usedPrefix}buy potion <quantity>*,
-and type *${usedPrefix}heal <quantity>* to use potions
+يجب ان يكون لديك على الاقل 80 ❤️صحه للقيام ب مغامره!!
+يرجى شراء ❤️الصحه اولا بكتابة *${usedPrefix}اشتري potion <quantity>*,
+و اكتب *${usedPrefix}heal <quantity>* لاستخدام الpotion
 `.trim())
     if (new Date - user.lastadventure <= cooldown) return m.reply(`
-You're already adventure!!, please wait *🕐${timers.toTimeString()}*
+لقد قمت بمغامرة بالفعل، انتظر!! *🕐${timers.toTimeString()}*
 `.trim())
     const rewards = reward(user)
-    let text = 'you\'ve been adventure and lost'
+    let text = 'لقد قمت بمغامره و خسرت'
     for (const lost in rewards.lost) if (user[lost]) {
         const total = rewards.lost[lost].getRandom()
         user[lost] -= total * 1
@@ -28,7 +28,7 @@ You're already adventure!!, please wait *🕐${timers.toTimeString()}*
 }
 handler.help = ['adventure', 'petualang', 'berpetualang', 'mulung']
 handler.tags = ['rpg']
-handler.command = /^(adventure|(ber)?petualang(ang)?|mulung)$/i
+handler.command = /^(adventure|مغامره|مغامرة)$/i
 
 handler.cooldown = cooldown
 handler.disabled = false
@@ -38,32 +38,32 @@ export default handler
 function reward(user = {}) {
     let rewards = {
         reward: {
-            money: 201,
-            exp: 301,
-            trash: 101,
-            potion: 2,
-            rock: 2,
-            wood: 2,
-            string: 2,
-            common: 2 * (user.dog && (user.dog > 2 ? 2 : user.dog) * 1.2 || 1),
-            uncommon: [0, 0, 0, 1, 0].concat(
+            الفلوس: 201,
+            الاكسبي: 301,
+            نفايه: 101,
+            جرعة: 2,
+            صخر: 2,
+            خشب: 2,
+            خيط: 2,
+            شائع: 2 * (user.dog && (user.dog > 2 ? 2 : user.dog) * 1.2 || 1),
+            غير_مألوف: [0, 0, 0, 1, 0].concat(
                 new Array(5 - (
                     (user.dog > 2 && user.dog < 6 && user.dog) || (user.dog > 5 && 5) || 2
                 )).fill(0)
             ),
-            mythic: [0, 0, 0, 0, 0, 1, 0, 0, 0].concat(
+            أسطوري: [0, 0, 0, 0, 0, 1, 0, 0, 0].concat(
                 new Array(8 - (
                     (user.dog > 5 && user.dog < 8 && user.dog) || (user.dog > 7 && 8) || 3
                 )).fill(0)
             ),
-            legendary: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0].concat(
+            أسطوري: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0].concat(
                 new Array(10 - (
                     (user.dog > 8 && user.dog) || 4
                 )).fill(0)
             ),
-            iron: [0, 0, 0, 1, 0, 0],
-            gold: [0, 0, 0, 0, 0, 1, 0],
-            diamond: [0, 0, 0, 0, 0, 0, 1, 0].concat(
+            حديد: [0, 0, 0, 1, 0, 0],
+            ذهب: [0, 0, 0, 0, 0, 1, 0],
+            جواهر: [0, 0, 0, 0, 0, 0, 1, 0].concat(
                 new Array(5 - (
                     (user.fox < 6 && user.fox) || (user.fox > 5 && 5) || 0
                 )).fill(0)
