@@ -2,19 +2,19 @@ let confirm = {}
 
 async function handler(m, { conn, args }) {
     //if (!isROwner) throw 'Dalam perbaikan'
-    if (m.sender in confirm) throw 'You are still gambling, wait for it to finish!!'
+    if (m.sender in confirm) throw 'انت لا تزال في الجيم، انتظر حتى ينتهي'
     try {
         let user = global.db.data.users[m.sender]
         let count = (args[0] && number(parseInt(args[0])) ? Math.max(parseInt(args[0]), 1) : /all/i.test(args[0]) ? Math.floor(parseInt(user.money)) : 1) * 1
-        if ((user.money * 1) < count) return m.reply('💹 Your money is not enough!!')
+        if ((user.money * 1) < count) return m.reply('نقودك ليست كافيه !!')
         if (!(m.sender in confirm)) {
             confirm[m.sender] = {
                 sender: m.sender,
                 count,
-                timeout: setTimeout(() => (m.reply('timed out'), delete confirm[m.sender]), 60000)
+                timeout: setTimeout(() => (m.reply('انتهى الوقت'), delete confirm[m.sender]), 60000)
             }
-            let txt = `Are you sure you want to gamble (Y/n)\n\n*
-            Bet:* ${count} 💹\n⏰ 60s Timeout`
+            let txt = `هل انت متأكد بانك تريد ان تراهن (Y/n)\n\n*
+            رهان:* ${count} 💹\n⏰ 60s انتهى`
             return conn.sendButton(m.chat, txt, author, null, [['✔️'], ['✖️']], m)
         }
     } catch (e) {
@@ -23,7 +23,7 @@ async function handler(m, { conn, args }) {
             let { timeout } = confirm[m.sender]
             clearTimeout(timeout)
             delete confirm[m.sender]
-            m.reply('Rejected')
+            m.reply('مرفوض')
         }
     }
 }
@@ -50,18 +50,18 @@ handler.before = async m => {
                 user.money += (Math.floor(count / 1.5)) * 1
             }
             m.reply(`
-            | *PLAYERS* | *POINT* |
-            * BOT:*      ${Bot}
-            * YOU:*    ${you}
-            You *${status}*, You ${status == 'win' ? `get *+${count * 2}*` : status == 'lost' ? `loss *-${count * 1}*` : `get *+${Math.floor(count / 1.5)}*`} Money 💹
+            | *اللاعبون* | *النقاط* |
+            * البوت:*      ${Bot}
+            *انت:*    ${you}
+            انت *${status}*, انت ${status == 'فزت' ? `حصلت على *+${count * 2}*` : status == 'خسرت' ? `خسرت *-${count * 1}*` : `حصلت على *+${Math.floor(count / 1.5)}*`} نقود 💹
                 `.trim())
             clearTimeout(timeout)
             delete confirm[m.sender]
             return !0
-        } else if (/^(✖️|no)?$/i.test(txt)) {
+        } else if (/^(✖️|لا)?$/i.test(txt)) {
             clearTimeout(timeout)
             delete confirm[m.sender]
-            m.reply('Rejected')
+            m.reply('مرفوض')
             return !0
         }
 
@@ -69,7 +69,7 @@ handler.before = async m => {
         clearTimeout(timeout)
         delete confirm[m.sender]
         if (moneyDulu > (user.money * 1)) user.money = moneyDulu * 1
-        m.reply('Error while betting (Rejected)')
+        m.reply('خطأ اثناء الرهان (مرفوض)')
         return !0
     } finally {
         clearTimeout(timeout)
@@ -80,7 +80,7 @@ handler.before = async m => {
 
 handler.help = ['judi [jumlah]']
 handler.tags = ['rpg']
-handler.command = /^(judi|bet)$/i
+handler.command = /^(رهان|bet)$/i
 
 export default handler
 
