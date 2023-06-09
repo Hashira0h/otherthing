@@ -3,30 +3,29 @@ let handler = async (m, {conn, usedPrefix}) => {
 	
     let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let user = global.db.data.users[who]
-    if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+    if (!(who in global.db.data.users)) throw `◄ المستخدم غير موجود في قاعدة البيانات الخاصة بي`
     conn.reply(m.chat, `
-┌───⊷ *BALANCE* ⊶
-▢ *📌Number* : _@${who.split('@')[0]}_
-▢ *💎Diamonds* : _${user.diamond}_
-▢ *💎Gold* : _${user.gold}_
-▢ *💎Rock* : _${user.rock}_
-▢ *💎EMARALD* : _${user.emerald}_
-▢ *💎Rank* : _${user.role}_
-▢ *💎Health* : _${user.health}_
-▢ *💎Wood* : _${user.wood}_
-▢ *💎Potions* : _${user.potion}_
-▢ *💎Iron* : _${user.iron}_
-▢ *💎Money* : _${user.money}_
-▢ *⬆️XP* : _Total ${user.exp}_
-└──────────────
+═──═〖 *BALANCE* 〗═──═
+║□ *📌المنشن* : _@${who.split('@')[0]}_
+║□ *💎الجواهر* : _${user.diamond}_
+║□ *💎الذهب* : _${user.gold}_
+║□ *💎الصخر* : _${user.rock}_
+║□ *💎الزمرد* : _${user.emerald}_
+║□ *💎التصنيف* : _${user.role}_
+║□ *💎الصحه* : _${user.health}_
+║□ *💎الخشب* : _${user.wood}_
+║□ *💎الجرع* : _${user.potion}_
+║□ *💎الحديد* : _${user.iron}_
+║□ *💎الفلوس* : _${user.money}_
+║□ *⬆️الاكس بي* : _Total ${user.exp}_
+═──══──══──══──══──═
 
-*NOTE :* 
-You can buy 💎 diamonds using the commands*
-❏ *${usedPrefix}todiamond* <amount>
-❏ *${usedPrefix}todiamondall*`, m, { mentions: [who] })
+*ملحوظه :* 
+*يمكنك شراء 💎 جواهر باستخدام هذا الامر*
+❏ *${usedPrefix}لجواهر* <القدر>`, m, { mentions: [who] })
 }
 handler.help = ['balance']
 handler.tags = ['econ']
-handler.command = ['bal', 'diamantes', 'diamond', 'balance'] 
+handler.command = ['balance', 'ممتلكاتي'] 
 
 export default handler
