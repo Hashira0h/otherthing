@@ -1,14 +1,14 @@
 import axios from 'axios'
 let split = '|'
 let handler = async (m, { conn, args: [effect], text: txt, usedPrefix, command, name }) => {
-if (!effect) throw '*¿correct use of command?*\n—◉ _#logo (efect) (text)_\n*𝙴xample:*\n—◉ _#logo 3d-deep-sea-metal Guru_\n\n*[❗]  when two text is needed, use:*\n—◉ _#logo (efect) (text1|text2)_\n*𝙴xample:*\n—◉ _#logo Wolf-Logo-Galaxy GURU|Bot\n\n*<𝑳𝑰𝑺𝑻  𝑬𝑭𝑬𝑪𝑻𝑺/>*\n\n° ඬ⃟📝 #logo ' + effects.map(v => v.title).join('\n° ඬ⃟📝 #logo *')
+if (!effect) throw '*استخدم الامر بطريقة صحيحه*\n_#logo (efect) (text)_\n*𝙴xample:*\n—◉ _#logo 3d-deep-sea-metal Mikasa_\n\n*اذا يتطلب عمل كلمتين اكتب :*\n—◉ _#logo (efect) (text1|text2)_\n*𝙴xample:*\n—◉ _#logo Wolf-Logo-Galaxy Mikasa|Bot\n\n*<قايمة الافكتات/>*\n\n° ඬ⃟📝 #logo ' + effects.map(v => v.title).join('\n° ඬ⃟📝 #logo*')
 effect = effect.toLowerCase()
-if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `*this ${effect} can not find this*`
+if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `*لم اجد هذا ${effect}*`
 let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart()
 if (text.includes(split)) text = text.split(split)
 text = Array.isArray(text) ? text : [text]
 let res = await textpro(effect, ...text)
-if (typeof res == 'number') throw res == -1 ? `*[❗𝐈𝐍𝐅𝐎❗]  ${effect} 𝙽ot found*` : `*use correct format ${usedPrefix + command} ${effect} ${new Array(res).fill('texto').map((v, i) => v + (i ? i + 1 : '')).join('|')}*`
+if (typeof res == 'number') throw res == -1 ? `*${effect} لم اجده*` : `*استخدمه بطريقة صحيحه  ${usedPrefix + command} ${effect} ${new Array(res).fill('texto').map((v, i) => v + (i ? i + 1 : '')).join('|')}*`
 let result = await axios.get(res, {
 responseType: 'arraybuffer'
 })
