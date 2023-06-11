@@ -9,16 +9,16 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     var nDays = 86400000 * args[0]
     var now = new Date() * 1
     
-    m.reply(`✳️Your lease expires in 
+    m.reply(`ينتهي عقد الإيجار الخاص بك في
     
     ${msToDate(global.db.data.chats[who].expired - now)}
 
-  _Then the bot will automatically leave the group_`) 
+  _بعد تلك المده سيغادر البوت جروبك تلقائياً !_`) 
     
 }
 handler.help = ['checkexpired']
 handler.tags = ['group']
-handler.command = /^(checkexpired|cexpired)$/i
+handler.command = /^(تفقد_المده|cexpired)$/i
 handler.group = true
 
 export default handler
