@@ -13,11 +13,11 @@ let handler = async (m, { conn, text }) => {
 		var number = text
   }
 
-  if(!text && !m.quoted) return conn.reply(m.chat, `*❏USER RESET*\n\nTag the user, type the number or reply to the message of the user you want to RESET`, m)
+  if(!text && !m.quoted) return conn.reply(m.chat, `*❏إعادة تعيين المستخدم*\n\nمنشن المستخدم, *اكتب الرقم أو قم بالرد على رسالة المستخدم الذي تريد *إعادة تعيينه`, m)
   //let exists = await conn.isOnWhatsApp(number)
-  // if (exists) return conn.reply(m.chat, `*The number is not registered in WhatsApp*`, m)
-  if(isNaN(number)) return conn.reply(m.chat, `*❏ USER RESET*\n\nThe number you entered is invalid`, m)
- // if(number.length > 8) return conn.reply(m.chat, `*❏ USER RESET*\n\nThe number you entered is invalid!`, m)
+  // if (exists) return conn.reply(m.chat, `*الرقم غير مسجل في واتس اب*`, m)
+  if(isNaN(number)) return conn.reply(m.chat, `*❏ إعادة تعيين المستخدم*\nالرقم الذي ادخلته خاطأً`, m)
+ // if(number.length > 8) return conn.reply(m.chat, `*❏ إعادة تعيين المستخدم*\nالرقم الذي ادخلته خاطأً!`, m)
   try {
 		if(text) {
 			var user = number + '@s.whatsapp.net'
@@ -36,14 +36,14 @@ let handler = async (m, { conn, text }) => {
   
 	delete global.global.db.data.users[user]
  	
- 	conn.reply(m.chat, `*❏ USER RESET*\n\n✅ Rebooted to @${number} from the *DATABASE*`, null, { mentions: [user] })
+ 	conn.reply(m.chat, `*❏ إعادة تعيين المستخدم*\n\n✅ إعادة التشغيل إلى @${number}من *قاعدة البيانات*`, null, { mentions: [user] })
 
  
  }
 }
 handler.help = ['reset <54xxx>']
 handler.tags = ['owner']
-handler.command = ['reset'] 
+handler.command = ['إعادة'] 
 handler.admin = false
 handler.rowner = true
 
