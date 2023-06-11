@@ -1,6 +1,6 @@
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0] || isNaN(args[0])) throw `✳️ Please enter a number representing the number of days!\n\n📌 Example :\n*${usedPrefix + command}* 30`
+    if (!args[0] || isNaN(args[0])) throw `!! ادخل عدد الايام!\n\n📌 مثال :\n*${usedPrefix + command}* 30`
 
     let who
     if (m.isGroup) who = args[1] ? args[1] : m.chat
@@ -10,12 +10,12 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     var now = new Date() * 1
     if (now < global.db.data.chats[who].expired) global.db.data.chats[who].expired += nDays
     else global.db.data.chats[who].expired = now + nDays
-    let teks = `✅ The expiration days were established for \n*${await conn.getName(who)}* \n\n*Duration:* ${args[0]} Days\n\n*Countdown :* ${msToDate(global.db.data.chats[who].expired - now)}`
+    let teks = `✅ تم تحديد أيام انتهاء الصلاحية لـ \n*${await conn.getName(who)}* \n\n*المده:* ${args[0]} ايام\n\n*العد التنازلي :* ${msToDate(global.db.data.chats[who].expired - now)}`
     conn.sendButton(m.chat, teks, igfg, null, [['Del Expired', `${usedPrefix}delexpired`], ['Check Expired', `${usedPrefix}checkexpired`]], m)
 }
 handler.help = ['expired <días>']
 handler.tags = ['owner']
-handler.command = /^(expired|addexpired)$/i
+handler.command = /^(expired|المدة)$/i
 handler.rowner = true
 export default handler
 
