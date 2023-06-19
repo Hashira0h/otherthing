@@ -6,7 +6,7 @@ let username = conn.getName(who)
 let bv = `./src/mp3/${pickRandom([""])}.jpg`
 let av = `./src/mp3/${pickRandom([""])}.mp3`
 
-m.reply( `*و اياك يارب يقلبي 💗*`)
+m.reply( `و اياك ايرب`)
 conn.sendFile(m.chat, bv, 'picturejpg', null, m, true, { type: 'pictureMessage', ptt: true })
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 }
