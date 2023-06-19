@@ -2,7 +2,7 @@ let handler = m => m
 handler.all = async function (m) {
 let chat = global.db.data.chats[m.chat] 
      if (/^ليش انت غبي$/i.test(m.text) ) { //sem prefixo
-    conn.reply(m.chat, ``, m) //wm, null, [['Menu', '#menu']], m) botones :V
+    conn.reply(m.chat, `لانه تكلم معك`, m) //wm, null, [['Menu', '#menu']], m) botones :V
 
 } 
     if (/^zbi$/i.test(m.text) ) { //sem prefixo
@@ -142,6 +142,11 @@ if (/^كيفك|كيفيك$/i.test(m.text) ) { //sem prefixo
 
 if (/^تست$/i.test(m.text) ) { //sem prefixo
     conn.reply(m.chat, `كملووو`, m) //wm, null, [['Menu', '#menu']], m) botones :V
+
+}
+
+if (/^تبا لك$/i.test(m.text) ) { //sem prefixo
+    conn.reply(m.chat, `ولك بالمثل`, m) //wm, null, [['Menu', '#menu']], m) botones :V
 
 }
 return !0 }
