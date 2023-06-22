@@ -62,7 +62,7 @@ let str = `
 ╗═──═──═──═──═──═ه
 ╣❒ اكتب /اوامر لكي
 ╣❒ ترى جميع اوامري
-╝═──═──═──═──═──═ه
+╝═──═──═──═──═──═ه`
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
     m.react(done)
 
