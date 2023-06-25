@@ -1,5 +1,5 @@
 let handler = async (m, { conn, command, text, usedPrefix, participants }) => 
-    const mentionedUser = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : args[2] ? (args[2].replace(/[@ .+-]/g, '') + '@s.whatsapp.net') : ''
+
  const userChar = [
       "أراماكي",
       "أكاينو",
@@ -24,7 +24,7 @@ let handler = async (m, { conn, command, text, usedPrefix, participants }) =>
 
     let message = `*${userCharacterSeletion}*`
     
-    conn.sendMessage(m.chat, { text: message, mentions: [mentionedUser] }, { quoted: m })
+    conn.sendMessage(m.chat, { text: message }, { quoted: m })
     
 }
 handler.help = ["character @tag"]
