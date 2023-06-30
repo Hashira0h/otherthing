@@ -7,11 +7,11 @@ let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 let username = conn.getName(who)
 let av = `./src/mp3/${pickRandom([""])}.mp3`
 
-m.reply( `هلا يحب`)
+m.reply( `عيونها في ايش اساعدك`)
 conn.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 } 
 
-handler.customPrefix = /^(بوت|ميكاسا)$/i
+handler.customPrefix = /^(ميكاسا)$/i
 handler.command = new RegExp
 
 export default handler
