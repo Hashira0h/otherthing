@@ -7,14 +7,13 @@ let handler = async (m, { conn }) => {
     if (!canLevelUp(user.level, user.exp, global.multiplier)) {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
         let txt = `
-┌───⊷ *LEVEL*
-▢ Number : *${name}*
-▢ Level : *${user.level}*
-▢ XP : *${user.exp - min}/${xp}*
-▢ Role : *${user.role}*
-└──────────────
+┓━━【 *الـتصـنـيف* 】━━┏
+☎️ الـرقـم : *${name}*
+🚒 الـلـفـل : *${user.level}*
+♨️ الـاكـس بـي : *${user.exp - min}/${xp}*
+♟️ الـتـصـنيـف : *${user.role}*
 
-You lack *${max - user.exp}* of *XP* to level up
+ناقـصـك *${max - user.exp}* من *الـكس بـي* لـلـصعود الـى لفـل جـديـد
 `.trim()
 try {
   let imgg = API('fgmods', '/api/rank', {
@@ -37,13 +36,10 @@ try {
     	user.role = global.rpg.role(user.level).name
 
         let str = `
-┌─⊷ *LEVEL UP*
-▢ Previous level : *${before}*
-▢ current level : *${user.level}*
-▢ Role : *${user.role}*
-└──────────────
-
-*_The more you interact with the bots, the higher your level will be_*
+┓━━【 *لفل جديد* 】━━┏
+♨️ اللفل القديم : *${before}*
+🎉 اللفل الجديد : *${user.level}*
+♟️ التصنيف : *${user.role}*
 `.trim()
         try {
             let img = API('fgmods', '/api/levelup', { 
@@ -58,6 +54,6 @@ try {
 
 handler.help = ['levelup']
 handler.tags = ['econ']
-handler.command = ['nivel', 'lvl', 'levelup', 'level'] 
+handler.command = ['رانك', 'لفل', 'levelup', 'lvl'] 
 
 export default handler
