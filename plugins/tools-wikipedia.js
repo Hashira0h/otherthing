@@ -12,7 +12,7 @@ let handler = async (m, { text }) => {
 	let resulw = $('#mw-content-text > div.mw-parser-output').find('p').text().trim()
 	m.reply(`☘️ *ويكيبيديا*
 
-‣ Buscado : ${wik}
+☘️ الـطلـب : ${wik}
 
 ${resulw}`)
 } catch (e) {
