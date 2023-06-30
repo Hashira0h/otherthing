@@ -5,13 +5,13 @@ function handler(m, { groupMetadata }) {
     let b
     do b = ps.getRandom()
     while (b === a)
-    m.reply(`${toM(a)} ❤️ ${toM(b)}\nCongratulations 💖🍻`, null, {
+    m.reply(`${toM(a)} ❤️ ${toM(b)}\nمبروووك 💖🍻`, null, {
         mentions: [a, b]
     })
 }
 handler.help = ['ship']
 handler.tags = ['fun']
-handler.command = ['ship']
+handler.command = ['زواج']
 
 handler.group = true
 
