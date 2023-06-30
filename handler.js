@@ -762,13 +762,13 @@ export async function deleteUpdate(message) {
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return 
-            await this.reply(msg.chat, `
-≡ deleted a message 
-┌─⊷  𝘼𝙉𝙏𝙄 𝘿𝙀𝙇𝙀𝙏𝙀 
-▢ *Number :* @${participant.split`@`[0]} 
-└─────────────
-TO DEACTIVE , PRESS 
+            await this.reply(msg.chat, ` 
+ 
+الرساله المحذوفه :* @${participant.split`@`[0]} 
+
+عشان توقفها اكتب 
 */off antidelete*
+عشان تشغلها
 *.enable delete*
 `.trim(), msg, {
             mentions: [participant]
@@ -781,16 +781,16 @@ TO DEACTIVE , PRESS
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • This command can only be used by the *Creator of the bot*',
-        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • This command can only be used by the *Bot Owner',
-        mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* •This function is only for *For Bot moderators*',
-        premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* • This command is for *Premium members only',
-        group: '*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • This command can only be used in groups',
-        private: '*ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • This command can only be used in the *private chat of the Bot*',
-        admin: '*ᴏɴʟʏ ᴀᴅᴍɪɴ* • This command is only for *Group Admins*',
-        botAdmin: '*ᴏɴʟʏ ʙᴏᴛ ᴀᴅᴍɪɴ* • To use this command I must be *Admin!*',
-        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* •  Sign in to use this feature Typing:\n\n*/reg name.age*\n\n📌Example : */reg GURU.20*', 
-        restrict: '*ʀᴇsᴛʀɪᴄᴛ* • This feature is *disabled*',
+        rowner: '*هذا المر للمطور فــقــط !*',
+        owner: '*هذا المر للمطور فــقــط !*',
+        mods: '*هذا الامر لـمـشـرفـيـن البوت فـقـط !*',
+        premium: '*هذا الامر للاشخاص الـبـريـمـيـام فـقـط !*',
+        group: '*هذا الامر يستخدم في الـجـروبـات فـقـط !*',
+        private: '*هذا الامر يستخدم في الـخـاص فـقـط !*',
+        admin: '*هذا الامر لـمـشـرفـيـن المجموعه فـقـط !*',
+        botAdmin: '*يجب ان يكون البوت مـشـرف !*',
+        unreg: '*انت لم تسجل بعد !* اكتب للتسجيل:\n\n*/reg الاسم.العمر*\n\n📌مثال : */reg Gojo.19*', 
+        restrict: '*الريأكت متوقف !!*',
     }[type]
     if (msg) return m.reply(msg)
 }
