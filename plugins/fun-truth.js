@@ -10,7 +10,7 @@ let handler  = async (m, { conn }) => {
 }
 handler.help = ['truth']
 handler.tags = ['fun']
-handler.command = /^(truth)$/i
+handler.command = /^(حقيقه|حقيقة)$/i
 
 export default handler
 
