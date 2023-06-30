@@ -43,6 +43,18 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 ⚓ .تربيتي
 ⚓ .ضرب
 ▪━━━━┣⚓┫━━━━▪
+
+┓──【 *الـادوات* 】───┏
+⚒️ لملف
+⚒️ هات_اغنية
+⚒️ احسب
+⚒️ جوجل
+⚒️ ليركس
+⚒️ لرابط
+⚒️ ترجم
+⚒️ انطق
+⚒️ ويكيبيديا
+▪━━━━┣⚒️┫━━━━▪
 `.trim())
 handler.help = ['allmenu']
 handler.tags = ['main']
