@@ -31,7 +31,7 @@ conn.sendFile(m.chat, buff, ran, null, m, true, {
 type: 'audioMessage', 
 ptt: true 
 })})
-} else throw `*Reply your audio or vn that will be modified, using the command ${usedPrefix + command}*`
+} else throw `*رد على الصوت الذي تريد تحويله، استخدم الامر التالي ${usedPrefix + command}*`
 } catch (e) {
 throw e
 }}
