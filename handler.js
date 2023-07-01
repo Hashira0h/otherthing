@@ -678,8 +678,8 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let pp = 'https://i.imgur.com/8B4jwGq.jpeg'
-                    let ppgp = 'https://i.imgur.com/8B4jwGq.jpeg'
+                    let pp = 'https://telegra.ph/file/c15fce842890d1eb01a37.jpg'
+                    let ppgp = 'https://telegra.ph/file/c15fce842890d1eb01a37.jpg'
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
                         ppgp = await this.profilePictureUrl(id, 'image')
