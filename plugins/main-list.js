@@ -100,10 +100,8 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, isP
 
 ┓───【 *الـالـعاب* 】───┏
 🎮 اكس او
-🎮 
-🎮
-🎮
-🎮
+🎮 حساب
+🎮 يد
 ▪━━━━┣🎮┫━━━━▪
 `.trim())
 handler.help = ['allmenu']
