@@ -419,7 +419,7 @@ export async function handler(chatUpdate) {
                     for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                         let data = (await conn.onWhatsApp(jid))[0] || {}
                         if (data.exists)
-                            m.reply(`*Plugin:* ${name}\n*Sender:* ${m.sender}\n*Chat:* ${m.chat}\n*Command:* ${m.text}\n\n\`\`\`${format(e)}\`\`\``.trim(), data.jid)
+                            m.reply(`*الفايل:* ${name}\n*المرسل:* ${m.sender}\n*الشات:* ${m.chat}\n*الامر:* ${m.text}\n\n\`\`\`${format(e)}\`\`\``.trim(), data.jid)
                     }
                 }
             }
@@ -541,7 +541,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.diamond && global.db.data.users[m.sender].diamond < plugin.diamond * 1) {
-                     this.reply(m.chat, `✳️ your diamonds ran out \n use the following command to buy more diamonds \n*${usedPrefix}todiamond* <amount`, m)
+                     this.reply(m.chat, `💎 ليس لديك جواهر كافيه \n استخدم هذا الامر لشراء جواهر\n*${usedPrefix}todiamond* <amount`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
@@ -587,7 +587,7 @@ export async function handler(chatUpdate) {
                             for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
                                 let data = (await conn.onWhatsApp(jid))[0] || {}
                                 if (data.exists)
-                                    m.reply(`*🗂️ Plugin:* ${m.plugin}\n*👤 Sender:* ${m.sender}\n*💬 Chat:* ${m.chat}\n*💻 Command:* ${usedPrefix}${command} ${args.join(' ')}\n📄 *Error Logs:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
+                                    m.reply(`*🗂️ الفايل:* ${m.plugin}\n*👤 المرسل:* ${m.sender}\n*💬 Chat:* ${m.chat}\n*💻 الامر:* ${usedPrefix}${command} ${args.join(' ')}\n📄 *المشكله:*\n\n\`\`\`${text}\`\`\``.trim(), data.jid)
                             }
                         m.reply(text)
                     }
@@ -601,7 +601,7 @@ export async function handler(chatUpdate) {
                         }
                     }
                     if (m.diamond)
-                        m.reply(`consumed *${+m.diamond}* 💎`)
+                        m.reply(`استهلكت *${+m.diamond}* 💎`)
                 }
                 break
             }
@@ -738,14 +738,14 @@ export async function groupsUpdate(groupsUpdate) {
         if (!id) continue
         let chats = global.db.data.chats[id], text = ''
         if (!chats?.detect) continue
-        if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed to```\n@desc').replace('@desc', groupUpdate.desc)
-        if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed to```\n@subject').replace('@subject', groupUpdate.subject)
-        if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed to```').replace('@icon', groupUpdate.icon)
-        if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed to```\n@revoke').replace('@revoke', groupUpdate.revoke)
-        if (groupUpdate.announce == true) text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || '*Group has been closed!*')
-        if (groupUpdate.announce == false) text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || '*Group has been open!*')
-        if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '*Group has been all participants!*')
-        if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '*Group has been only admin!*')
+        if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```الوصف تغير الى```\n@desc').replace('@desc', groupUpdate.desc)
+        if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```الاسم تغير الى```\n@subject').replace('@subject', groupUpdate.subject)
+        if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```الصوره تغيرت الى```').replace('@icon', groupUpdate.icon)
+        if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```الرابط تغير الى```\n@revoke').replace('@revoke', groupUpdate.revoke)
+        if (groupUpdate.announce == true) text = (chats.sAnnounceOn || this.sAnnounceOn || conn.sAnnounceOn || '*الجروب مغلق!*')
+        if (groupUpdate.announce == false) text = (chats.sAnnounceOff || this.sAnnounceOff || conn.sAnnounceOff || '*الجروب مفتوح!*')
+        if (groupUpdate.restrict == true) text = (chats.sRestrictOn || this.sRestrictOn || conn.sRestrictOn || '*الجروب لكل الاعضاء!*')
+        if (groupUpdate.restrict == false) text = (chats.sRestrictOff || this.sRestrictOff || conn.sRestrictOff || '*الجروب فقط للمشرفين!*')
         if (!text) continue
         await this.sendMessage(id, { text, mentions: this.parseMention(text) })
     }
