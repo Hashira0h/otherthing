@@ -1,7 +1,7 @@
 import axios from 'axios'
 let split = '|'
 let handler = async (m, { conn, args: [effect], text: txt, usedPrefix, command, name }) => {
-if (!effect) throw '*استخدم الامر بطريقة صحيحه*\n_#logo (efect) (text)_\n*𝙴xample:*\n—◉ _#logo 3d-deep-sea-metal Mikasa_\n\n*اذا يتطلب عمل كلمتين اكتب :*\n—◉ _#logo (efect) (text1|text2)_\n*𝙴xample:*\n—◉ _#logo Wolf-Logo-Galaxy Mikasa|Bot\n\n*<قايمة الافكتات/>*\n\n° ඬ⃟📝 #logo ' + effects.map(v => v.title).join('\n° ඬ⃟📝 #logo*')
+if (!effect) throw '*استخدم الامر بطريقة صحيحه*\n_#logo (efect) (text)_\n*𝙴xample:*\n—◉ _#logo 3d-deep-sea-metal Mikasa_\n\n*اذا يتطلب عمل كلمتين اكتب :*\n—◉ _#logo (efect) (text1|text2)_\n*مثال:*\n—◉ _#لوجو Wolf-Logo-Galaxy Mikasa|Bot\n\n*<قايمة الافكتات/>*\n\n° ඬ⃟📝 #logo ' + effects.map(v => v.title).join('\n° ඬ⃟📝 #logo*')
 effect = effect.toLowerCase()
 if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `*لم اجد هذا ${effect}*`
 let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart()
@@ -12,11 +12,11 @@ if (typeof res == 'number') throw res == -1 ? `*${effect} لم اجده*` : `*ا
 let result = await axios.get(res, {
 responseType: 'arraybuffer'
 })
-await conn.sendFile(m.chat, result.data, 'Error.jpg', `*PROCESSING!!*\n*EFFECT: ${effect}*`, m)
+await conn.sendFile(m.chat, result.data, 'Error.jpg', `*جــاري الـتـجهـيـز!!*\n*الـتـأثـير: ${effect}*`, m)
 }
 handler.help = ['logos']
 handler.tags = ['logo']
-handler.command = /^(logo|logos)$/i
+handler.command = /^(لوجو)$/i
 export default handler
 
 import formData from 'form-data'
