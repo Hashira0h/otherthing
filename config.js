@@ -47,10 +47,10 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 'ᴛʜᴇ MIKASA ʙᴏᴛ'
+global.botname = 𝐌𝐈𝐊𝐀𝐒𝐀 𝐁𝐎𝐓'
 global.premium = 'true'
-global.packname = '✿ 𝗠𝐈𝐊𝗔𝗦𝗔 ┃ᴮᴼᵀ' 
-global.author = 'ɪᴛᴏsʜɪ ʀɪɴ ♡' 
+global.packname = '𝐌𝐈𝐊𝐀𝐒𝐀 𝐁𝐎𝐓' 
+global.author = 'صلي ؏ النبي' 
 global.igfg = '❀ Follow on Instagram\nhttps://instagram.com/mohamedmostafa4769?igshid=ZGUzMzM3NWJiOQ==\n' 
 global.dygp = 'https://chat.whatsapp.com/JcWLIylfbI5I0wazsJ7xEB'
 global.fgsc = 'https://github.com/Guru322/GURU-BOT-V1' 
