@@ -57,7 +57,7 @@ ${arr.slice(6).join('')}
      conn.reply(m.chat, `❏ *توقع الشريك*\nاكتب الامر التالي للدخول في نفس الجيم
 ❏ *${usedPrefix + command} ${text}*
 
-❏ الجائزه:* 4999 اكس بي*`, m, {
+❏ *الجائزه: 4999* اكس بي`, m, {
             mentions: conn.parseMention(text)
         })
         
