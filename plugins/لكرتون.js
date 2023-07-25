@@ -3,7 +3,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 let q = m.quoted ? m.quoted : m
 let mime = (q.msg || q).mimetype || q.mediaType || ""
 if (!/image/g.test(mime)) throw '*رد على صورة*'
-m.reply('*هذا الامر مكنه تحويل صورتك الى انمي*')    
+m.reply('*استنا لحد ما تخلص !!*')    
 let data = await q.download?.()
 let image = await uploadImage(data)
 try {
