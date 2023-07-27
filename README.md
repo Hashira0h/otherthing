@@ -2,7 +2,7 @@
 <p align="center">  
   <a href="https://youtu.be/WcA7GZuaN0A">
     <img alt="Guru" height="300" src="https://telegra.ph/file/c15fce842890d1eb01a37.jpg">
-    <h1 align="center">Mikasa-bot</h1>
+    <h1 align="center">Gojo bot </h1>
   </a>
 </p>
 <p align="center">
