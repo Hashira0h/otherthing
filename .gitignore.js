@@ -131,5 +131,6 @@ dist
 
 sessions/
 data.store.json
+
 database.json
 package-lock.json
