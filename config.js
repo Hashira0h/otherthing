@@ -47,7 +47,7 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.botname = 𝐌𝐈𝐊𝐀𝐒𝐀 𝐁𝐎𝐓'
+global.botname = '𝐌𝐈𝐊𝐀𝐒𝐀 𝐁𝐎𝐓'
 global.premium = 'true'
 global.packname = '𝐌𝐈𝐊𝐀𝐒𝐀 𝐁𝐎𝐓' 
 global.author = 'صلي ؏ النبي' 
