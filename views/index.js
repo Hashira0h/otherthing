@@ -9,4 +9,4 @@ function addMsg(obj) {
 
 window.onclick = () => addMsg(12)
 }
-}
+
