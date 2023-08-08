@@ -1,4 +1,4 @@
-console.log('✅ STARTING...')
+console.log('We're go !...')
 
 import { join, dirname } from 'path'
 import { createRequire } from 'module';
@@ -16,15 +16,15 @@ const { name, author } = require(join(__dirname, './package.json')) // https://w
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('MIKASA -  BOT', {
+say('GOJO BOT', {
+  font: 'simple',
+  align: 'center',
+  gradient: ['white', 'black']
+})
+say(`GOJO By Moyt.`, {
   font: 'chrome',
   align: 'center',
-  gradient: ['red', 'magenta']
-})
-say(`'${name}' By @GURU._`, {
-  font: 'console',
-  align: 'center',
-  gradient: ['red', 'magenta']
+  gradient: ['white', 'black']
 })
 
 var isRunning = false
@@ -39,7 +39,7 @@ function start(file) {
   say([process.argv[0], ...args].join(' '), {
     font: 'console',
     align: 'center',
-    gradient: ['red', 'magenta']
+    gradient: ['black', 'white']
   })
   setupMaster({
     exec: args[0],
