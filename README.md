@@ -1,7 +1,7 @@
 
 <p align="center">  
   <a href="https://youtu.be/WcA7GZuaN0A">
-    <img alt="Guru" height="300" src="https://telegra.ph/file/c15fce842890d1eb01a37.jpg">
+    <img alt="Guru" height="300" src="https://telegra.ph/file/8ecac1bcf60c6c172076a.jpg">
     <h1 align="center">Gojo bot </h1>
   </a>
 </p>
