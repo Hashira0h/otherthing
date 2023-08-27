@@ -20,7 +20,7 @@ var user = number + '@s.whatsapp.net'
 } catch (e) {
 } finally {
 conn.groupParticipantsUpdate(m.chat, [user], 'demote')
-m.reply(`✅ User demoted`)
+m.reply(`*تــم الـأعـفـاء !*`)
 }
 
 }
