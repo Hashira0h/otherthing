@@ -1,4 +1,4 @@
-console.log('We're go !...')
+console.log('We re go !...')
 
 import { join, dirname } from 'path'
 import { createRequire } from 'module';
