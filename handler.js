@@ -541,7 +541,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.diamond && global.db.data.users[m.sender].diamond < plugin.diamond * 1) {
-                     this.reply(m.chat, `💎 ليس لديك جواهر كافيه \n استخدم هذا الامر لشراء جواهر\n*${usedPrefix}todiamond* <amount`, m)
+                     this.reply(m.chat, `💎 ليس لديك جواهر كافيه \n استخدم هذا الامر لشراء جواهر\n*${usedPrefix}لجواهر* <المبلغ>*`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {
@@ -685,7 +685,7 @@ export async function participantsUpdate({ id, participants, action }) {
                         ppgp = await this.profilePictureUrl(id, 'image')
                         } finally {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user').replace('@group', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'Desconocido') :
-                            (chat.sBye || this.bye || conn.bye || 'HELLO, @user')).replace('@user', '@' + user.split('@')[0])
+                            (chat.sBye || this.bye || conn.bye || 'منور في احلا جروب يا @user')).replace('@user', '@' + user.split('@')[0])
                          
                             let wel = API('fgmods', '/api/welcome', {
                                 username: await this.getName(user),
@@ -715,11 +715,11 @@ export async function participantsUpdate({ id, participants, action }) {
             break
         case 'promote':
         case 'promover':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador')
+            text = (chat.sPromote || this.spromote || conn.spromote || '*@user افرح يعم بقيت مشرف*')
         case 'demote':
         case 'degradar':
             if (!text)
-                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user not now an administrador')
+                text = (chat.sDemote || this.sdemote || conn.sdemote || '*@user اكيد كنت متخاذل*')
             text = text.replace('@user', '@' + participants[0].split('@')[0])
             if (chat.detect)
                 this.sendMessage(id, { text, mentions: this.parseMention(text) })
